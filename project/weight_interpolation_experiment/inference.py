@@ -11,10 +11,10 @@ model = GPTLanguageModel()
 m = model.to(device)
 
 # Load the saved weights
-model.load_state_dict(torch.load('model_weights.pth'))
+m.load_state_dict(torch.load('model_weights.pth'))
 
 # Ensure the model is in evaluation mode
-model.eval()
+m.eval()
 
 # generate from the model
 context = torch.zeros((1, 1), dtype=torch.long, device=device)
